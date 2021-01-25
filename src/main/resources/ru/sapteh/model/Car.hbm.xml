@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+    <class name="ru.sapteh.model.Car" table="cars">
+        <id name="id" type="int" column="id">
+            <generator class="identity"/>
+        </id>
+        <property name="mark" column="mark"/>
+        <property name="model" column="model"/>
+
+        <!--Прикрепляем сущьность двигателя к таблицам.-->
+        <many-to-one name="engine" column="engines_id"
+                     class="ru.sapteh.model.Engine"
+                     cascade="save-update"/>
+
+    </class>
+</hibernate-mapping>

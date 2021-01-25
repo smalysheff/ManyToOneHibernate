@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-configuration xmlns="http://www.hibernate.org/xsd/orm/cfg">
+    <session-factory>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/engine?serverTimezone=UTC</property>
+        <property name="connection.user">root</property>
+        <property name="connection.password">9874123</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property>
+
+        <mapping resource="ru/sapteh/model/Car.hbm.xml"/>
+        <mapping resource="ru/sapteh/model/Engine.hbm.xml"/>
+        
+    </session-factory>
+</hibernate-configuration>
